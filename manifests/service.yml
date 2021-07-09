@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "kubernetescluster1-7812"
+    labels:
+        app: "kubernetescluster1-7812"
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 5432
+      targetPort: 5432
+      protocol: TCP
+      name: http
+    selector:
+        app: "kubernetescluster1-7812"
