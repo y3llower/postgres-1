@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "kubernetescluster1-7812"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "kubernetescluster1-7812"
+  template:
+    metadata:
+      labels:
+        app: "kubernetescluster1-7812"
+    spec:
+      containers:
+        - name: "kubernetescluster1-7812"
+          image: "acrxyzzyx.azurecr.io/kubernetescluster1"
+          ports:
+          - containerPort: 5432
